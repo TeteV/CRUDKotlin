@@ -17,7 +17,7 @@ class PostServiceImpl : IPostService {
                 val title = response.getString("title")
                 val body = response.getString("body")
 
-                val post = Post(id,title,body,"","")
+                val post = Post(id,title,body)
                 completionHandler(post)
             },
             { error ->
