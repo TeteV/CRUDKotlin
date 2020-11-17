@@ -1,13 +1,17 @@
  package com.example.crudkotlinaso
 
+import android.content.Context
 import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonArrayRequest
 import com.example.crudkotlinaso.models.Post
 import com.example.crudkotlinaso.service.PostServiceImpl
+import com.example.crudkotlinaso.service.PostSingleton
 import java.net.CacheResponse
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +20,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         getById()
+        //getAll();
     }
+
+    /*private fun getAll() {
+
+        val postServiceImpl = PostServiceImpl()
+       postServiceImpl.getAll(this) { response ->
+            run {
+                if (response != null) {
+                    viewAdapter.bicycleList = response
+                }
+                viewAdapter.notifyDataSetChanged()
+            }
+        }
+    }*/
 
     fun getById() {
         val postServiceImpl = PostServiceImpl()
@@ -40,6 +58,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
 
 
 }

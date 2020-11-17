@@ -6,7 +6,7 @@ import com.android.volley.RequestQueue
 import com.android.volley.toolbox.Volley
 
 class PostSingleton constructor(context: Context){
-    val baseUrl = "http://192.168.1.129:8000"
+    val baseUrl = "http://192.168.114.190:8000"
 
     companion object {
         @Volatile
