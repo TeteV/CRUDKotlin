@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">CrudKotlinaso</string>
     <string name="empty_text">Esta vacio</string>
+    <string name="btnAll">Ver Todos</string>
+    <string name="btnOne">Ver uno</string>
+    <string name="MainWindow">Main Window</string>
+    <string name="Salir">Volver</string>
+    <string name="Id">Id</string>
+    <string name="Title">Title</string>
+    <string name="Body">Body</string>
+    <string name="Buscar">Buscar</string>
+    <string name="Delete">Delete</string>
 </resources>

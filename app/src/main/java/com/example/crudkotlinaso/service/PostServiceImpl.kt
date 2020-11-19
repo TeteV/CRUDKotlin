@@ -29,12 +29,27 @@ class PostServiceImpl : IPostService {
             },
             { error ->
                 Log.v("holi","Error en getById")
+                Log.v("holi",error.toString())
                 completionHandler(null)
             })
         PostSingleton.getInstance(context).addToRequestQueue(objectRequest)
     }
 
-     fun getAll(context: Context, completionHandler: (response: ArrayList<Post>?) -> Unit) {
+    override fun deletePost(context: Context, postId: Int, completionHandler: () -> Unit) {
+        val path = PostSingleton.getInstance(context).baseUrl + "/api/delete-post/" + postId
+        val objectRequest = JsonObjectRequest(Request.Method.DELETE, path, null,
+            { response ->
+                Log.v("borro", "se borró")
+                completionHandler()
+            },
+            { error ->
+                Log.v("borro", "error al borrar")
+                completionHandler()
+            })
+        PostSingleton.getInstance(context).addToRequestQueue(objectRequest)
+    }
+
+     /*override fun getAll(context: Context, completionHandler: (response: ArrayList<Post>?) -> Unit) {
         val path = PostSingleton.getInstance(context).baseUrl + "/api/posts"
         val arrayRequest = JsonArrayRequest(
             Request.Method.GET, path, null,
@@ -45,6 +60,7 @@ class PostServiceImpl : IPostService {
                     val id = post.getInt("id")
                     val title = post.getString("title")
                     val body = post.getString("body")
+
                     posts.add(Post(id, title, body))
                 }
                 completionHandler(posts)
@@ -53,6 +69,6 @@ class PostServiceImpl : IPostService {
                 completionHandler(ArrayList<Post>())
             })
         PostSingleton.getInstance(context).addToRequestQueue(arrayRequest)
-    }
+    }*/
 
 }
