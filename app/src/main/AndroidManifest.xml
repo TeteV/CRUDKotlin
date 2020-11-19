@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrudKotlinaso"
         android:usesCleartextTraffic="true">
+        <activity android:name=".CreatePost"></activity>
         <activity android:name=".MainWindow">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

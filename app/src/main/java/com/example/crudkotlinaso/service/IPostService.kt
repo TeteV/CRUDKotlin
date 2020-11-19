@@ -7,6 +7,7 @@ interface IPostService {
     fun getById(context: Context, postId: Int, completionHandler: (response: Post?) -> Unit)
     fun deletePost(context: Context, postId: Int, completionHandler: () -> Unit)
     fun updatePost(context: Context, post: Post, completionHandler: () -> Unit)
+    fun createPost(context: Context, post: Post, completionHandler: () -> Unit)
     //fun getAll(context: Context, completionHandler: (response: ArrayList<Post>?) -> Unit)
 
 }

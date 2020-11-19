@@ -15,14 +15,20 @@ class MainWindow : AppCompatActivity() {
 
     fun listeners(){
         val botonAll = findViewById<Button>(R.id.GoToAllBtn)
-        val botonOne = findViewById<Button>(R.id.GoToOneBtn)
         botonAll.setOnClickListener {
             val intent = Intent(this,PostListActivity::class.java)
             startActivity(intent)
         }
 
+        val botonOne = findViewById<Button>(R.id.GoToOneBtn)
         botonOne.setOnClickListener {
             val intent = Intent(this,PostDetailActivity::class.java)
+            startActivity(intent)
+        }
+
+        val botonGoToCreate = findViewById<Button>(R.id.GoToCreateBtn)
+        botonGoToCreate.setOnClickListener {
+            val intent = Intent(this,CreatePost::class.java)
             startActivity(intent)
         }
     }

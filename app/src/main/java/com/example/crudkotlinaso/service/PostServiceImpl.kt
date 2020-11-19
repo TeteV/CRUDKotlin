@@ -66,4 +66,17 @@ class PostServiceImpl : IPostService {
             })
         PostSingleton.getInstance(context).addToRequestQueue(objectRequest)
     }
+
+    override fun createPost(context: Context, post: Post, completionHandler: () -> Unit) {
+        val path = PostSingleton.getInstance(context).baseUrl + "/api/add-post"
+        val postJson: JSONObject = JSONObject()
+        postJson.put("id", post.id.toString())
+        postJson.put("title", post.title)
+        postJson.put("body", post.body)
+
+        val objectRequest = JsonObjectRequest(Request.Method.POST, path, postJson,
+            { response -> completionHandler() },
+            { error -> completionHandler() })
+        PostSingleton.getInstance(context).addToRequestQueue(objectRequest)
+    }
 }

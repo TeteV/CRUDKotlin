@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">CrudKotlinaso</string>
-    <string name="empty_text">Esta vacio</string>
+    <string name="empty_text"></string>
     <string name="btnAll">See All</string>
     <string name="btnOne">See One</string>
     <string name="MainWindow">Main Window</string>
@@ -11,4 +11,8 @@
     <string name="Search">Search</string>
     <string name="Delete">Delete</string>
     <string name="Update">Update</string>
+    <string name="CreateNP">Create New Post</string>
+    <string name="Create">Create</string>
+    <string name="GoToAll">See All Posts</string>
+    <string name="GoToCreate">Create Post</string>
 </resources>

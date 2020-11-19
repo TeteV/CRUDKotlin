@@ -11,4 +11,5 @@
     <color name="yellow">#FFC107</color>
     <color name="back">#C835008A</color>
     <color name="search">#2196F3</color>
+    <color name="create">#4CAF50</color>
 </resources>
