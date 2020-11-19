@@ -6,6 +6,7 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.example.crudkotlinaso.models.Post
+import org.json.JSONObject
 
 class PostServiceImpl : IPostService {
 
@@ -49,26 +50,20 @@ class PostServiceImpl : IPostService {
         PostSingleton.getInstance(context).addToRequestQueue(objectRequest)
     }
 
-     /*override fun getAll(context: Context, completionHandler: (response: ArrayList<Post>?) -> Unit) {
-        val path = PostSingleton.getInstance(context).baseUrl + "/api/posts"
-        val arrayRequest = JsonArrayRequest(
-            Request.Method.GET, path, null,
-            { response ->
-                var posts: ArrayList<Post> = ArrayList()
-                for (i in 0 until response.length()) {
-                    val post = response.getJSONObject(i)
-                    val id = post.getInt("id")
-                    val title = post.getString("title")
-                    val body = post.getString("body")
+    override fun updatePost(context: Context, post: Post, completionHandler: () -> Unit) {
+        val path = PostSingleton.getInstance(context).baseUrl + "/api/update-post/" + post.id
+        val postJson: JSONObject = JSONObject()
+        postJson.put("id", post.id.toString())
+        postJson.put("title", post.title)
+        postJson.put("body", post.body)
 
-                    posts.add(Post(id, title, body))
-                }
-                completionHandler(posts)
+        val objectRequest = JsonObjectRequest(Request.Method.PUT, path, postJson,
+            { response ->
+                completionHandler()
             },
             { error ->
-                completionHandler(ArrayList<Post>())
+                completionHandler()
             })
-        PostSingleton.getInstance(context).addToRequestQueue(arrayRequest)
-    }*/
-
+        PostSingleton.getInstance(context).addToRequestQueue(objectRequest)
+    }
 }

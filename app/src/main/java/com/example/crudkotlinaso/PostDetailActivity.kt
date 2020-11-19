@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.crudkotlinaso.models.Post
 import com.example.crudkotlinaso.service.PostServiceImpl
 
  class PostDetailActivity : AppCompatActivity() {
@@ -38,6 +39,16 @@ import com.example.crudkotlinaso.service.PostServiceImpl
              val id: Int = findViewById<TextView>(R.id.idTxt).text.toString().toInt()
              deletePost(id)
          }
+
+         val updateBtn = findViewById<Button>(R.id.EditBtn)
+         updateBtn.setOnClickListener {
+             val id: Int = findViewById<TextView>(R.id.idTxt).text.toString().toInt()
+             val title: String = findViewById<TextView>(R.id.editTextTitle).text.toString()
+             val body: String = findViewById<TextView>(R.id.editTextBody).text.toString()
+
+             val post = Post(id,title,body)
+             updatePost(post)
+         }
      }
 
 
@@ -62,12 +73,24 @@ import com.example.crudkotlinaso.service.PostServiceImpl
          val postServiceImpl = PostServiceImpl()
          postServiceImpl.deletePost(this, postId) { ->
              run {
-                 Log.v("Link", "Creo que va a la list")
+                 Log.v("Link", "Aqui iria al list")
                  /*val intent = Intent(this, PostListActivity::class.java)
                  startActivity(intent)*/
              }
          }
      }
+
+     private fun updatePost(post: Post) {
+         val postServiceImpl = PostServiceImpl()
+         postServiceImpl.updatePost(this, post) { ->
+             run {
+                 Log.v("Link", "Iria al List")
+                 /*val intent = Intent(this, PostDetailActivity::class.java)
+                 startActivity(intent)*/
+             }
+         }
+     }
+
 
 
 

@@ -11,7 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/Buscar"
+        android:text="@string/Search"
+        android:backgroundTint="@color/search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +36,8 @@
         android:id="@+id/VolverBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Salir"
+        android:text="@string/Back"
+        android:backgroundTint="@color/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -45,8 +47,8 @@
 
     <EditText
         android:id="@+id/editTextTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="232dp"
+        android:layout_height="48dp"
         android:layout_marginTop="120dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -57,8 +59,8 @@
 
     <EditText
         android:id="@+id/editTextBody"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="236dp"
+        android:layout_height="45dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/Body"
@@ -72,25 +74,27 @@
         android:id="@+id/EditBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:backgroundTint="@color/yellow"
+        android:text="@string/Update"
         app:layout_constraintBottom_toTopOf="@+id/VolverBtn"
         app:layout_constraintEnd_toStartOf="@+id/DeleteBtn"
-        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextBody"
-        app:layout_constraintVertical_bias="0.087" />
+        app:layout_constraintVertical_bias="0.075" />
 
     <Button
         android:id="@+id/DeleteBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
         android:text="@string/Delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintHorizontal_bias="0.77"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextBody"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintVertical_bias="0.056" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
